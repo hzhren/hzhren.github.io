@@ -3,8 +3,22 @@
 }
 /*首页水印*/
 .watermark{
+    position: absolute;
+    width: 1000px;
+    height: 235px;
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    opacity:.2;
     .project-name{
         font-size: 120px;
+    }
+    .project-tagline{
+        font-size: 50px;
+    }
+    .project-saySomething{
+        font-size:25px;
     }
 }
 /*旋转box*/
@@ -15,14 +29,15 @@
     width: 400px;
     height: 400px;
     margin: -200px;
-    perspective: 1000px;
+    perspective: 1200px;
+    z-index: 1;
     cursor: default;
     .box {
         position: fixed;
         width: 100%;
         height: 100%;
         transform-style: preserve-3d;
-        animation: rotate 5s 15s linear infinite both;
+        animation: rotate 4s 4s linear infinite both;
         > div {
             position: fixed;
             width: 100%;
@@ -36,22 +51,22 @@
             font-size: 50px;
         }
         .top {
-            animation: top 2s 2s linear both;
+            animation: top 2.5s 0.5s linear both;
         }
         .bottom {
-            animation: bottom 2s 4s linear both;
+            animation: bottom 2.5s 0.5s linear both;
         }
         .left {
-            animation: left 2s 6s linear both;
+            animation: left 2.5s 1.75s linear both;
         }
         .right {
-            animation: right 2s 8s linear both;
+            animation: right 2.5s 1.75s linear both;
         }
         .back {
-            animation: back 2s 10s linear both;
+            animation: back 2.5s 3s linear both;
         }
         .front {
-            animation: front 2s 12s linear both;
+            animation: front 2.5s 3s linear both;
         }
         &:hover {
             > div {
@@ -59,25 +74,22 @@
                 color: #fff;
             }
             .top {
-                background: rgba(255, 255, 0, 0.6);
+                background: rgba(255, 255, 0, 0.5);
             }
             .bottom {
-                background: rgba(0, 255, 0, 0.6);
-            }
-            .bottom {
-                background: rgba(0, 255, 0, 0.6);
+                background: rgba(0, 255, 0, 0.5);
             }
             .left {
-                background: rgba(0, 255, 255, 0.6);
+                background: rgba(0, 255, 255, 0.5);
             }
             .right {
-                background: rgba(0, 0, 255, 0.6);
+                background: rgba(0, 0, 255, 0.5);
             }
             .front {
-                background: rgba(255, 0, 255, 0.6);
+                background: rgba(255, 0, 255, 0.5);
             }
             .back {
-                background: rgba(255, 0, 0, 0.6);
+                background: rgba(255, 0, 0, 0.5);
             }
         }
     }
@@ -85,37 +97,37 @@
 
 @keyframes rotate {
     100% {
-        transform: rotate3d(2, 2, 2, 360deg);
+        transform: rotate3d(10, 10,2, 360deg);
     }
 }
 
 @keyframes top {
     100% {
-        transform: rotateX(90deg) translateZ(200px);
+        transform: rotateX(270deg) translateZ(-200px);
     }
 }
 
 @keyframes bottom {
     100% {
-        transform: rotateX(-90deg) translateZ(200px);
+        transform: rotateX(-270deg) translateZ(-200px);
     }
 }
 
 @keyframes left {
     100% {
-        transform: rotateY(-90deg) translateZ(200px);
+        transform: rotateY(-270deg) translateZ(-200px);
     }
 }
 
 @keyframes right {
     100% {
-        transform: rotateY(90deg) translateZ(200px);
+        transform: rotateY(270deg) translateZ(-200px);
     }
 }
 
 @keyframes front {
     100% {
-        transform: translateZ(200px);
+        transform: rotateY(180deg) translateZ(-200px);
     }
 }
 
